@@ -1,6 +1,6 @@
 import type { JSX } from "react";
-import AuthLayout from "../../../app/layout/AuthLayout";
 import LoginCard from "../components/LoginCard";
+import AuthLayout from "../components/AuthLayout";
 
 const LoginPages = (): JSX.Element => {
   return (

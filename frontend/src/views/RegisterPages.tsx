@@ -1,6 +1,6 @@
 import type { JSX } from "react";
-import AuthLayout from "../../../app/layout/AuthLayout";
 import RegisterCard from "../components/RegisterCard";
+import AuthLayout from "../components/AuthLayout";
 
 const RegisterPages = (): JSX.Element => {
   return (

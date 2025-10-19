@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import type { InputProps } from "../features/auth/types";
+import type { InputProps } from "../types";
 
 const Input = ({
   type,

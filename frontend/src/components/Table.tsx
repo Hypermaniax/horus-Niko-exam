@@ -1,10 +1,10 @@
 import { Edit, Search, Trash } from "lucide-react";
-import Input from "../../../components/Input";
-import useTable from "../hooks/useTable";
 import { useState } from "react";
 import CardDelete from "./CadDelete";
 import CardEdit from "./CardEdit";
 import type { DataDelete, DataUpdate } from "../types";
+import Input from "./Input";
+import useTable from "../hooks/useTable";
 
 const Table = () => {
   const { filterData, setSearch, handleDelete, handleUpdate } = useTable();

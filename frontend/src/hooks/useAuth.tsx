@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { login, register } from "../services/auth";
 import type {
   HandleLogin,
   HandleRegister,
   LoginData,
   RegisterData,
 } from "../types";
-import { toast } from "react-toastify";
-import { login, register } from "../service";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const useAuth = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -19,7 +19,7 @@ const useAuth = () => {
       setLoading(true);
       const loginUser = await login(data);
       toast.success(loginUser.message || "succes");
-      navigate('/')
+      navigate("/");
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         const msg = error.response?.data?.message || "Login failed FE";

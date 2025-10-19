@@ -13,7 +13,6 @@ const LoginUser = async (body) => {
   const { username, password } = body;
 
   const user = await getUserByCredentialsDB(username);
-
   if (!user) {
     throw new AppError("username or password wrong", 401);
   }
@@ -28,7 +27,7 @@ const LoginUser = async (body) => {
     nama: user.nama,
   };
 
-  const token = generateJWT(safeUser)
+  const token = generateJWT(safeUser);
 
   return token;
 };

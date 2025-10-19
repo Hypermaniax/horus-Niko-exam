@@ -1,8 +1,8 @@
-import React, { useState, type JSX } from "react";
-import CardAuth from "./CardAuth";
-import Input from "../../../components/Input";
+import { useState, type JSX } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import CardAuth from "./CardAuth";
+import Input from "./Input";
 
 const LoginCard = (): JSX.Element => {
   const { handleLogin, loading } = useAuth();

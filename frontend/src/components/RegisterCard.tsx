@@ -1,6 +1,6 @@
 import { useState, type JSX } from "react";
 import CardAuth from "./CardAuth";
-import Input from "../../../components/Input";
+import Input from "./Input";
 import useAuth from "../hooks/useAuth";
 
 const RegisterCard = (): JSX.Element => {

@@ -1,22 +1,10 @@
-const { Pool } = require("pg");
-require("dotenv").config();
+const knex = require("knex");
+const config = require("../knexfile");
 
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: null,
-  port: process.env.DB_PORT,
-});
+const db = knex(config.development);
 
-(async () => {
-  try {
-    const client = await pool.connect();
-    console.log("✅ DB connected successfully");
-    client.release(); // lepas ke pool biar gak nyangkut
-  } catch (err) {
-    console.error("❌ DB connection failed:", err.message);
-  }
-})();
+db.raw("SELECT 1")
+  .then(() => console.log("DB connected successfully (Knex)"))
+  .catch((err) => console.error("DB connection failed:", err.message));
 
-module.exports = pool;
+module.exports = db;

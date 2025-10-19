@@ -1,8 +1,8 @@
 import { X } from "lucide-react";
-import PopUpLayout from "../../../app/layout/PopUpLayout";
 import type { CardPropsUpdate, TableResult } from "../types";
-import Input from "../../../components/Input";
 import { useState } from "react";
+import Input from "./Input";
+import PopUpLayout from "./PopUpLayout";
 
 const CardEdit = ({
   handleClose,

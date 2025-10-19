@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import type { TableResult } from "../types";
-import { deleteById, getAll, updateById } from "../service";
 import axios from "axios";
 import { toast } from "react-toastify";
+import type { TableResult } from "../types";
+import { deleteById, getAll, updateById } from "../services/auth";
 
 const useTable = () => {
   const [tableData, setTableData] = useState<TableResult[]>([]);
@@ -42,10 +42,10 @@ const useTable = () => {
 
   const handleUpdate = async (data: TableResult) => {
     try {
-      setLoading(true)
+      setLoading(true);
       const res = await updateById(data);
       toast.success(res);
-      console.log('123123')
+      console.log("123123");
       fetchData();
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {

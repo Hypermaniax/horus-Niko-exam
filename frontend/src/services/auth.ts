@@ -1,5 +1,11 @@
 import axios from "axios";
-import type { TableResult } from "./types";
+import type {
+  TableResult,
+  LoginData,
+  LoginResult,
+  RegisterData,
+  RegisterResult,
+} from "../types";
 
 const api = import.meta.env.VITE_API_AUTH;
 
@@ -35,10 +41,20 @@ export const deleteById = async (id: number | null) => {
 
 export const updateById = async (data: TableResult) => {
   const updateData = {
-    name:data.nama,
-    email:data.email,
-    username: data.username
-  }
+    name: data.nama,
+    email: data.email,
+    username: data.username,
+  };
   const res = await axiosInstance.put(`${api}/${data.id}`, updateData);
   return res.data.message;
+};
+
+export const login: LoginResult = async (data: LoginData) => {
+  const res = await axiosInstance.post(`${api}/login`, data);
+  return res.data;
+};
+
+export const register: RegisterResult = async (data: RegisterData) => {
+  const res = await axiosInstance.post(`${api}/register`, data);
+  return res.data;
 };

@@ -1,5 +1,5 @@
-import MainLayout from "../../../app/layout/MainLayout";
 import Dashboard from "../components/Dashboard";
+import MainLayout from "../components/MainLayout";
 
 const DashboardPages = () => {
   return (

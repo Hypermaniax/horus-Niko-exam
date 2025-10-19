@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import type { AuthData } from "./types";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Navigate, Outlet } from "react-router-dom";
-import { getMe } from "../features/dashboard/service";
+import type { AuthData } from "../types";
+import { getMe } from "../services/auth";
 
 const ProtectedRoutes = () => {
   const [loading, setLoading] = useState<boolean>(true);

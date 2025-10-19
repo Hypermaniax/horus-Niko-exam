@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import PopUpLayout from "../../../app/layout/PopUpLayout";
+import PopUpLayout from "./PopUpLayout";
 import type { CardPropsDelete } from "../types";
 
 const CardDelete = ({ handleClose, nama, handleDelete }: CardPropsDelete) => {
