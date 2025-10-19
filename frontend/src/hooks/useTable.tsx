@@ -45,7 +45,6 @@ const useTable = () => {
       setLoading(true);
       const res = await updateById(data);
       toast.success(res);
-      console.log("123123");
       fetchData();
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {

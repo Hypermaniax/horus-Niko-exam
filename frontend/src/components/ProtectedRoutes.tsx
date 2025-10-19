@@ -13,7 +13,6 @@ const ProtectedRoutes = () => {
     const fetchAuth = async () => {
       try {
         const user = await getMe();
-        console.log(user);
         setAuth(user);
       } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
